@@ -1,0 +1,105 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div class="container">
+      
+<form [formGroup]="attendanceForm" class="form" (ngSubmit)="onmark()">
+
+        <div id="superr">
+
+        <label>Project :</label>
+
+        <select class="custom-select" formControlName="projectId" ng-required="projectId" id="project" 
+        (change)="projectselect($event.target.value)">
+            <option *ngFor="let pro of project" value={{pro.projectId}}>
+                {{pro.projectName}}</option>
+        </select><br>
+
+        </div>
+
+        <div>
+
+        <label>Employees Under project :</label>
+
+        <select formControlName="employeeId" id="employeees" required="true">
+                <option *ngFor="let emp of employeees" value={{emp.employeeId}}>
+                        {{emp.employeeName}}</option>
+        </select><br>
+        <div id="msg"></div>
+        </div>
+
+        <div>
+
+        <label>Month :</label>
+
+        <select formControlName="mnth"  required="true">
+
+            <option value="january">January</option>
+
+            <option value="february">February</option>
+
+            <option value="march">March</option>
+
+            <option value="april">April</option>
+
+            <option value="may">May</option>
+
+            <option value="june">June</option>
+
+            <option value="july">July</option>
+
+            <option value="august">August</option>
+
+            <option value="september">September</option>
+
+            <option value="october">October</option>
+
+            <option value="november">November</option>
+
+            <option value="december">December</option>
+
+        </select>
+
+        <br>
+
+        </div>
+        
+        <div>
+
+        <label>Year :</label>
+
+       <input type="number" formControlName="yrs">
+       
+
+        </div>
+
+        <br>
+
+        <div>
+
+        <label>Half day:</label>
+
+        <input type="number" formControlName="halfDay" max="30" placeholder="Enter Number of Half Days" required="true"/><br>
+
+        </div>
+
+        
+
+        <div>   
+
+            <label>Full Day:</label>
+
+            <input type="number" formControlName="fullDay"max="30" placeholder="Enter Number of Full Days" required="true"/><br>
+
+        </div>
+
+        
+
+        <div class="form-group">
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+         </div>
+
+    </form>
+
+    </div>

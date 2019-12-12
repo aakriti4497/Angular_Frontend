@@ -1,0 +1,43 @@
+<div id="super" class="container">
+    <form [formGroup]="configureForm" class="form" (ngSubmit)="onConfig()">
+        <h1 style="text-align: center;font-family: Verdana;color: blue">Configure Here!</h1>
+        <div class="form-group">
+            <label>Project:</label>
+            <select class="custom-select" formControlName="projectId" ng-required="projectId">
+                <option *ngFor="let pro of project" value={{pro.projectId}}>
+                    {{pro.projectName}}</option>
+            </select>
+</div>
+<div class="form-group">
+    <label>Role:</label>
+    <select class="custom-select" formControlName="roleId" ng-required="roleId">
+        <option *ngFor="let ro of role" value={{ro.roleId}}>
+            {{ro.roleName}}
+         </option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Location:</label>
+    <div>
+        <input id="offshore" type="radio" value="Offshore" name="location" formControlName="location" checked/>
+        <label for="offshore">Offshore</label>
+    </div>
+
+    <div>
+        <input id="onshore" type="radio" value="Onsite" name="location" formControlName="location">
+        <label for="onshore">Onshore</label>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label>Per Hour Billing</label>
+        <div>
+            <input type="number" formControlName="perHourBill" placeholder="Enter per hour Billing" required/>
+            </div>
+    </div>
+    <div align="center">
+        <button type="submit" class="btn btn-success" [disabled]="!configureForm.valid">Submit</button>
+    </div>
+    </form>
+    </div>

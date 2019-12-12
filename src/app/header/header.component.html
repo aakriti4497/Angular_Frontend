@@ -1,0 +1,22 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="menu">
+    <div class="container-fluid">
+		<div class="navbar-header">
+            <a href="#">Home Page</a>
+            </div>
+        <h3 style="color:white" class="nav navbar-nav navbar-center">Billing Management System</h3>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a routerLink="/LoginForm"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				
+				<li><a (click)="logout()" *ngIf="router.url==='/admin'||router.url==='/deo'">LogOut</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
